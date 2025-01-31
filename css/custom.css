@@ -1,0 +1,60 @@
+code::before,
+code::after {
+    content: none !important;
+}
+
+code {
+    font-size: 1em !important;
+    font-weight: 500 !important;
+}
+
+.csl-entry::before {
+    content: "– ";
+}
+
+.csl-bib-body::before {
+    content: "Bibliography:"
+}
+
+.csl-bib-body .csl-entry {
+    margin: 0;
+}
+
+span.time-to-read {
+    white-space: nowrap;
+}
+
+img.rounded-but-slightly {
+    border-radius: 10px;
+}
+
+img.rounded-but-less-slightly {
+    border-radius: 5px;
+}
+
+img.main-thumbnail {
+    border-radius: 5px;
+}
+
+*[aria-describedby="footnote-label"]::before {
+    content: "(";
+}
+
+*[aria-describedby="footnote-label"]::after {
+    content: ")";
+}
+
+figure.article-fig {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+img.article-fig {
+    max-width: 100%;
+}
+
+figcaption.article-fig {
+    padding: 10px;
+}

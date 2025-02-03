@@ -35,7 +35,7 @@ const siteMetadata = {
     //   posthogProjectApiKey: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     // },
     googleAnalytics: {
-      googleAnalyticsId: 'G-NX9LP7Y2HW', // e.g. G-XXXXXXX
+      googleAnalyticsId: 'G-BRLGH3E1SV', // e.g. G-XXXXXXX
     },
   },
   newsletter: {
@@ -62,7 +62,7 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
+      theme: 'preferred_color_scheme',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`
@@ -71,6 +71,7 @@ const siteMetadata = {
       themeURL: '',
       // This corresponds to the `data-lang="en"` in giscus's configurations
       lang: 'en',
+      inputPosition: 'top',
     },
   },
   search: {

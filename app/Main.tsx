@@ -99,7 +99,9 @@ export default function Home({ posts }) {
           </Link>
         </div>
       )}
-      <NewsletterForm />
+      <div className="border-t border-gray-200 py-12 dark:border-gray-700">
+        <NewsletterForm />
+      </div>
     </>
   )
 }

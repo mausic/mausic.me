@@ -3,15 +3,15 @@ const siteMetadata = {
   title: 'Mausic | Blog',
   author: 'Mausic',
   headerTitle: 'Mausic',
-  description: 'Blogging about live, technology, and everything in between.',
+  description: 'Blogging about life, technology, and everything in between.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://mausic.me',
   siteRepo: 'https://github.com/mausic/mausic.me',
-  siteLogo: '',
-  socialBanner: '/static/images/socialbanner.png',
+  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   mastodon: '',
-  email: '',
+  email: 'contact@mausic.me',
   github: 'https://github.com/mausic/',
   twitter: 'https://twitter.com/mausic',
   facebook: '',
@@ -19,6 +19,7 @@ const siteMetadata = {
   linkedin: 'https://www.linkedin.com/in/mausic',
   instagram: 'https://www.instagram.com/mausic.me/',
   locale: 'en-US',
+  // stickyNav: true,
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.

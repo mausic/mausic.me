@@ -5,7 +5,7 @@ const siteMetadata = {
   headerTitle: 'Mausic',
   description: 'Blogging about life, technology, and everything in between.',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://mausic.me',
   siteRepo: 'https://github.com/mausic/mausic.me',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
@@ -63,7 +63,7 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'preferred_color_scheme',
+      theme: 'light',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`

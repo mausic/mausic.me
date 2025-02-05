@@ -9,30 +9,37 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "flex items-center justify-between py-10",
+        "",
         siteMetadata.stickyNav
           ? "sticky top-0 z-50 bg-background backdrop-blur supports-[backdrop-filter]:bg-background/60"
           : "",
+        "px-4",
       )}>
-      <div>
-        <Link href="/" aria-label={siteMetadata.headerTitle}>
-          <div className="flex items-center justify-between">
-            {typeof siteMetadata.headerTitle === "string" ? (
-              <div className="hidden text-3xl font-semibold sm:block">
-                {siteMetadata.headerTitle}
-                <br />
-                <div className="text-sm font-normal sm:block">{siteMetadata.description}</div>
+      <div className="container-wrapper">
+        <div className="container flex items-center justify-between py-6">
+          <div className="">
+            <Link href="/" aria-label={siteMetadata.headerTitle}>
+              <div className="flex items-center justify-between">
+                {typeof siteMetadata.headerTitle === "string" ? (
+                  <div className="hidden text-3xl font-semibold sm:block">
+                    {siteMetadata.headerTitle}
+                    <br />
+                    <div className="text-sm font-normal text-muted-foreground sm:block">
+                      {siteMetadata.description}
+                    </div>
+                  </div>
+                ) : (
+                  siteMetadata.headerTitle
+                )}
               </div>
-            ) : (
-              siteMetadata.headerTitle
-            )}
+            </Link>
           </div>
-        </Link>
-      </div>
-      <div className="flex items-center space-x-4 leading-5 sm:space-x-6">
-        <NavigationMenu />
-        <SearchButton />
-        <ThemeSwitch />
+          <div className="flex items-center space-x-4 leading-5 sm:space-x-6">
+            <NavigationMenu />
+            <SearchButton />
+            <ThemeSwitch />
+          </div>
+        </div>
       </div>
     </header>
   );

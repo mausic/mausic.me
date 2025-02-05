@@ -57,6 +57,8 @@ export const metadata: Metadata = {
     title: siteMetadata.title,
     card: "summary_large_image",
     images: [siteMetadata.socialBanner],
+    description: siteMetadata.description,
+    creator: siteMetadata.twitter,
   },
 };
 
@@ -74,20 +76,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
+      <body className="min-h-svh bg-background font-sans text-foreground antialiased">
         <ThemeProviders>
+          <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+            <div vaul-drawer-wrapper="">
+              <div className="relative flex min-h-svh flex-col bg-background">
+                <div data-wrapper="" className="flex flex-1 flex-col">
+                  <Header />
+                  <div className="mx-auto w-full flex-1">
+                    <SectionContainer>
+                      <main className="px-4">{children}</main>
+                    </SectionContainer>
+                  </div>
+                  <Footer />
+                </div>
+              </div>
+            </div>
+          </SearchProvider>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <VercelAnalytics />
           <Toaster />
-          <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-            <div className="flex h-screen flex-col justify-between font-sans">
-              <Header />
-              <SectionContainer className="mx-0">
-                <main className="mb-auto">{children}</main>
-              </SectionContainer>
-              <Footer />
-            </div>
-          </SearchProvider>
         </ThemeProviders>
       </body>
     </html>

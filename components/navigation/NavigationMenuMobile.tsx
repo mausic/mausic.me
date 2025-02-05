@@ -32,8 +32,12 @@ export const NavigationMenuMobile = () => {
           />
         </svg>
       </DrawerTrigger>
-      <DrawerContent className="max-h-[80svh] p-0">
-        <div className="overflow-auto p-6">
+      <DrawerContent className="max-h-[80svh] p-0" title="Main navigation">
+        <DrawerHeader>
+          <DrawerTitle>Site navigation</DrawerTitle>
+          <DrawerDescription>Select the page to open</DrawerDescription>
+        </DrawerHeader>
+        <div className="overflow-auto p-6 pt-0">
           <div className="flex flex-col space-y-3">
             <MobileLink href="/" className="text-base" onOpenChange={setIsOpen}>
               Home

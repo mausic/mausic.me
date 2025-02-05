@@ -30,7 +30,7 @@ export default function Comments({ slug }: { slug: string }) {
       }
     }
     return siteMetadata.comments
-  }, [siteMetadata.comments, resolvedTheme])
+  }, [resolvedTheme])
 
   return (
     <>

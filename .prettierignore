@@ -1,0 +1,6 @@
+node_modules/
+public/
+.env
+.env.example
+pnpm-lock.yaml
+tag-data.json

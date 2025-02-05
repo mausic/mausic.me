@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: 'https://mausic.me',
   siteRepo: 'https://github.com/mausic/mausic.me',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/socialbanner.png`,
   mastodon: '',
   email: 'contact@mausic.me',
   github: 'https://github.com/mausic/',

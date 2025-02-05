@@ -1,6 +1,6 @@
 import 'css/tailwind.css'
 import 'css/custom.css'
-import 'pliny/search/algolia.css'
+// import 'pliny/search/algolia.css'
 
 import { Inter } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
@@ -12,6 +12,7 @@ import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
 import { Toaster } from '@/components/ui/sonner'
+import SectionContainer from '@/components/SectionContainer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -74,20 +75,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
+      <body className="antialiased text-black bg-white dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
-          <div className="flex h-screen flex-col justify-between font-sans">
-            <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-6xl xl:px-0">
-              <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-                <Header />
+          <VercelAnalytics />
+          <Toaster />
+          <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+            <div className="flex flex-col justify-between h-screen font-sans">
+              <Header />
+              <SectionContainer className="mx-0">
                 <main className="mb-auto">{children}</main>
-                <Toaster />
-                <VercelAnalytics />
-              </SearchProvider>
+              </SectionContainer>
+              <Footer />
             </div>
-            <Footer />
-          </div>
+          </SearchProvider>
         </ThemeProviders>
       </body>
     </html>

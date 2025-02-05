@@ -1,13 +1,20 @@
 import siteMetadata from '@/data/siteMetadata'
-import headerNavLinks from '@/data/headerNavLinks'
 import Link from './Link'
-import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
+import { cn } from './lib/utils'
+import { NavigationMenu } from './navigation/NavigationMenu'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-10">
+    <header
+      className={cn(
+        'flex items-center justify-between py-10',
+        siteMetadata.stickyNav
+          ? 'sticky top-0 z-50 bg-background backdrop-blur supports-[backdrop-filter]:bg-background/60'
+          : ''
+      )}
+    >
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
@@ -15,12 +22,7 @@ const Header = () => {
               <div className="hidden text-3xl font-semibold sm:block">
                 {siteMetadata.headerTitle}
                 <br />
-                <div
-                  className="text-sm font-normal sm:block
-                "
-                >
-                  {siteMetadata.description}
-                </div>
+                <div className="text-sm font-normal sm:block">{siteMetadata.description}</div>
               </div>
             ) : (
               siteMetadata.headerTitle
@@ -29,20 +31,9 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex items-center space-x-4 leading-5 sm:space-x-6">
-        {headerNavLinks
-          .filter((link) => link.href !== '/')
-          .map((link) => (
-            <Link
-              key={link.title}
-              href={link.href}
-              className="hidden font-medium text-gray-900 dark:text-gray-100 sm:block"
-            >
-              {link.title}
-            </Link>
-          ))}
+        <NavigationMenu />
         <SearchButton />
         <ThemeSwitch />
-        <MobileNav />
       </div>
     </header>
   )

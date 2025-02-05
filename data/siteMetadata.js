@@ -19,7 +19,7 @@ const siteMetadata = {
   linkedin: 'https://www.linkedin.com/in/mausic',
   instagram: 'https://www.instagram.com/mausic.me/',
   locale: 'en-US',
-  // stickyNav: true,
+  stickyNav: true,
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.

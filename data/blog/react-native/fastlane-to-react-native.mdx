@@ -1,10 +1,10 @@
 ---
 title: Setting up a CI/CD for React Native project with Fastlane
-date: '2025-02-03'
+date: "2025-02-03"
 draft: false
-tags: ['React-Native', 'Fastlane']
-thumbnail: '/static/images/blog/thumbs/react-native-fastlane.jpg'
-summary: 'A complete walkthrough on how to set up CI/CD for React Native (Expo) project with Fastlane and GitHub Actions.'
+tags: ["React-Native", "Fastlane"]
+thumbnail: "/static/images/blog/thumbs/react-native-fastlane.jpg"
+summary: "A complete walkthrough on how to set up CI/CD for React Native (Expo) project with Fastlane and GitHub Actions."
 ---
 
 # Introduction
@@ -313,7 +313,7 @@ on:
     # remove `paths` if you want to run the workflow on every push or update it accordingly to your repository structure
     # I use monorepo and my mobile app is located in `apps/mobile` directory
     paths:
-      - 'apps/mobile/**'
+      - "apps/mobile/**"
     branches:
       - main
 jobs:
@@ -352,7 +352,7 @@ jobs:
         with:
           node-version: 20
           # edit `yarn` to `npm` if you use npm instead
-          cache: 'yarn'
+          cache: "yarn"
       - name: Install dependencies
         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # version 4.0.2
         id: yarn-cache

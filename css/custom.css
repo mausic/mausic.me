@@ -9,11 +9,11 @@ code {
 }
 
 .csl-entry::before {
-  content: '– ';
+  content: "– ";
 }
 
 .csl-bib-body::before {
-  content: 'Bibliography:';
+  content: "Bibliography:";
 }
 
 .csl-bib-body .csl-entry {
@@ -36,12 +36,12 @@ img.main-thumbnail {
   border-radius: 5px;
 }
 
-*[aria-describedby='footnote-label']::before {
-  content: '(';
+*[aria-describedby="footnote-label"]::before {
+  content: "(";
 }
 
-*[aria-describedby='footnote-label']::after {
-  content: ')';
+*[aria-describedby="footnote-label"]::after {
+  content: ")";
 }
 
 figure.article-fig {

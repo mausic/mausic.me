@@ -1,36 +1,36 @@
-'use client'
+"use client";
 
-import { Comments as CommentsComponent } from 'pliny/comments'
-import { useEffect, useMemo, useState } from 'react'
-import siteMetadata from '@/data/siteMetadata'
-import { useTheme } from 'next-themes'
+import { Comments as CommentsComponent } from "pliny/comments";
+import { useEffect, useMemo, useState } from "react";
+import siteMetadata from "@/data/siteMetadata";
+import { useTheme } from "next-themes";
 
 export default function Comments({ slug }: { slug: string }) {
-  const [loadComments, setLoadComments] = useState(true)
-  const { theme, resolvedTheme } = useTheme()
+  const [loadComments, setLoadComments] = useState(true);
+  const { theme, resolvedTheme } = useTheme();
   useEffect(() => {
-    console.log(theme)
-    console.log(resolvedTheme)
-  }, [theme, resolvedTheme])
+    console.log(theme);
+    console.log(resolvedTheme);
+  }, [theme, resolvedTheme]);
 
   const commentsConfig = useMemo(() => {
     if (!siteMetadata.comments) {
-      return
+      return;
     }
-    if ('giscusConfig' in siteMetadata.comments) {
+    if ("giscusConfig" in siteMetadata.comments) {
       return {
         ...siteMetadata.comments,
         giscusConfig: {
           ...siteMetadata.comments.giscusConfig,
           theme:
-            resolvedTheme === 'dark'
+            resolvedTheme === "dark"
               ? siteMetadata.comments.giscusConfig.darkTheme
               : siteMetadata.comments.giscusConfig.theme,
         },
-      }
+      };
     }
-    return siteMetadata.comments
-  }, [resolvedTheme])
+    return siteMetadata.comments;
+  }, [resolvedTheme]);
 
   return (
     <>
@@ -39,5 +39,5 @@ export default function Comments({ slug }: { slug: string }) {
         <CommentsComponent commentsConfig={commentsConfig} slug={slug} />
       )}
     </>
-  )
+  );
 }

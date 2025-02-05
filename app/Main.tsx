@@ -1,11 +1,11 @@
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import Image from '@/components/Image'
-import siteMetadata from '@/data/siteMetadata'
-import NewsletterForm from '@/components/NewsletterForm'
-import { formatDate } from 'pliny/utils/formatDate'
+import Link from "@/components/Link";
+import Tag from "@/components/Tag";
+import Image from "@/components/Image";
+import siteMetadata from "@/data/siteMetadata";
+import NewsletterForm from "@/components/NewsletterForm";
+import { formatDate } from "pliny/utils/formatDate";
 
-const MAX_DISPLAY = 6
+const MAX_DISPLAY = 6;
 
 export default function Home({ posts }) {
   return (
@@ -17,23 +17,22 @@ export default function Home({ posts }) {
           </h1>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts found.'}
+          {!posts.length && "No posts found."}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, date, title, summary, tags, thumbnail } = post
+            const { slug, date, title, summary, tags, thumbnail } = post;
             return (
               <li key={slug} className="py-12">
                 <article>
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <div className="flex flex-col justify-center space-y-5 xl:col-span-3">
-                      {' '}
+                      {" "}
                       {/* Added flex and justify-center here */}
                       <div className="space-y-6">
                         <div>
                           <h2 className="mb-2 text-2xl font-bold leading-8 tracking-tight">
                             <Link
                               href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
+                              className="text-gray-900 dark:text-gray-100">
                               {title}
                             </Link>
                           </h2>
@@ -54,14 +53,13 @@ export default function Home({ posts }) {
                         <Link
                           href={`/blog/${slug}`}
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read more: "${title}"`}
-                        >
+                          aria-label={`Read more: "${title}"`}>
                           Read more &rarr;
                         </Link>
                       </div>
                     </div>
                     <dl className="xl:col-start-1 xl:row-start-1 xl:self-center">
-                      {' '}
+                      {" "}
                       {/* Added self-center here */}
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
@@ -84,7 +82,7 @@ export default function Home({ posts }) {
                   </div>
                 </article>
               </li>
-            )
+            );
           })}
         </ul>
       </div>
@@ -93,8 +91,7 @@ export default function Home({ posts }) {
           <Link
             href="/blog"
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="All posts"
-          >
+            aria-label="All posts">
             All Posts &rarr;
           </Link>
         </div>
@@ -103,5 +100,5 @@ export default function Home({ posts }) {
         <NewsletterForm />
       </div>
     </>
-  )
+  );
 }

@@ -4,8 +4,8 @@ module.exports = {
   singleQuote: false,
   bracketSpacing: true,
   bracketSameLine: true,
-  trailingComma: 'all',
-  arrowParens: 'always',
+  trailingComma: "all",
+  arrowParens: "always",
   tabWidth: 2,
-  plugins: ['prettier-plugin-tailwindcss'],
-}
+  plugins: ["prettier-plugin-tailwindcss"],
+};

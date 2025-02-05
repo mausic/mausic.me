@@ -10,6 +10,7 @@
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
     "content": "contentlayer dev & next dev",
+    "prettify": "prettier --write .",
     "test": "jest --passWithNoTests"
   },
   "dependencies": {

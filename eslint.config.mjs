@@ -1,5 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import eslintConfigPrettier from "eslint-config-prettier";
 import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
@@ -69,4 +70,5 @@ export default [
       "@typescript-eslint/no-require-imports": "off",
     },
   },
+  eslintConfigPrettier,
 ];

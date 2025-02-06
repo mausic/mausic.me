@@ -97,7 +97,7 @@
     "@opentelemetry/semantic-conventions": "1.13.0"
   },
   "engines": {
-    "node": ">=^20.18.1"
+    "node": ">=20.18.1"
   },
   "packageManager": "pnpm@9.13.2"
 }

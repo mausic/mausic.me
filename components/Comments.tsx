@@ -1,17 +1,13 @@
 "use client";
 
 import { Comments as CommentsComponent } from "pliny/comments";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import siteMetadata from "@/data/siteMetadata";
 import { useTheme } from "next-themes";
 
 export default function Comments({ slug }: { slug: string }) {
   const [loadComments, setLoadComments] = useState(true);
-  const { theme, resolvedTheme } = useTheme();
-  useEffect(() => {
-    console.log(theme);
-    console.log(resolvedTheme);
-  }, [theme, resolvedTheme]);
+  const { resolvedTheme } = useTheme();
 
   const commentsConfig = useMemo(() => {
     if (!siteMetadata.comments) {
